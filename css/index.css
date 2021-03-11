@@ -1,0 +1,528 @@
+* {
+    box-sizing: border-box;
+    font-family: Rubik;
+    font-variant-numeric: tabular-nums;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white
+}
+
+button {
+    border: 0;
+    font-size: 1.1em;
+    padding: .25em .75em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button.primary {
+    color: black;
+    background-color: #1DE9B6;
+}
+
+button.secondary {
+    color: #1DE9B6;
+    background-color: black;
+}
+
+@media (min-width: 760px) {
+    button {
+        font-size: 1.6em
+    }
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.2em;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo-wrapper {
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    display: block;
+    overflow: hidden;
+}
+
+.logo-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-icon-wrapper {
+    height: 45px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.menu-icon {
+    width: 100%;
+    height: 18px;
+    position: relative;
+}
+
+.menu-icon:before, .menu-icon:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: white;
+    height: 4px;
+    right: 0;
+}
+
+.menu-icon:before {
+    width: 100%;
+    top: 0;
+}
+
+.menu-icon:after {
+    width: 50%;
+    bottom: 0;
+}
+
+@media (min-width: 760px) {
+    header {
+        padding: 1.5em 3.5em;
+    }
+
+    .logo-wrapper {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/* Landing */
+
+.landing-wrapper {
+    padding: calc(45px + 2em) 0;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.timer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.time-wrapper, .time-colon {
+    width: 55%;
+    font-size: 5em;
+    text-align: right;
+    font-weight: 500;
+    position: relative;
+    line-height: 1.2em;
+}
+
+.time {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.time:before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 5px;
+    background-color: #FF1744;
+    right: 5%;
+    bottom: .05em;
+}
+
+.time-colon {
+    display: none
+}
+
+.time-label {
+    width: 45%;
+    font-size: 1.2em;
+    padding-left: .8em; 
+}
+
+.landing-subtitle, .landing-title {
+    text-align: center;
+    font-weight: 500;
+}
+
+.landing-subtitle {
+    font-size: 1.4em;
+    padding: 1em 0 .2em;
+}
+
+.landing-title {
+    font-size: 2.2em;
+}
+
+.cta-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.5em 1em;
+}
+
+@media (min-width: 760px) {
+    .landing-wrapper {
+        padding: calc(45px + 3em) 0;
+    }
+
+    .timer-wrapper {
+        padding: 10vh 0 0;
+    }
+
+    .time-wrapper, .time-colon {
+        width: fit-content;
+        display: block;
+        font-size: 10em;
+        line-height: 1em;
+    }
+
+    .time-label {
+        display: none;
+    }
+
+    .landing-subtitle {
+        font-size: 2.6em;
+        padding-bottom: 0;
+    }
+
+    .landing-title {
+        font-size: 4em;
+    }
+
+    .cta-wrapper {
+        padding-top: 3.5em;
+        padding-bottom: 3.5em;
+    }
+}
+
+@media (min-width: 760px) and (max-width: 1094px) {
+    .time-wrapper, .time-colon {
+        font-size: 8em;
+    }
+}
+
+/* Content Area */
+
+.welcome-wrapper {
+    padding: 1em 1.4em;
+    font-size: 1.2em
+}
+
+.welcome-tooltip {
+    display: inline-block;
+    padding: .4em .8em;
+    color: black;
+    background-color: #1DE9B6;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 1.1em
+}
+
+.welcome-tooltip:after {
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 10px 6px 6px 6px;
+    border-color: #1DE9B6 #000 #000 #000;
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    transform: translateY(100%);
+}
+
+@media (min-width: 1094px) {
+    .welcome-wrapper {
+        width: 85%;
+        font-size: 1.4em;
+        margin: auto;
+    }
+}
+
+/* swiper */
+
+.main-carousel {
+    width: 100%;
+    margin: 3em 0;
+    overflow: hidden;
+}
+
+.carousel-cell {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.theme-image {
+    max-width: 450px;
+    width: 100%;
+    padding: 0 1em;
+}
+
+.carousel-cell img {
+    width: 100%;
+}
+
+.theme-content-wrapper {
+    width: 100%;
+    padding: .5em 2em;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.theme-title {
+    font-weight: 500;
+    font-size: 2.8em;
+}
+
+.theme-content {
+    margin: .6em 0 1em;
+}
+
+.theme-content-wrapper button {
+    font-size: 1.15em;
+}
+
+.flickity-button {
+    background-color: black;
+    color: white;
+}
+
+.flickity-button:hover {
+    background: #FF1744;
+}
+
+.flickity-button:focus {
+    box-shadow: 0 0 0 5px #FF1744;
+}
+
+@media (min-width: 760px) {
+    .theme-image {
+        width: 50%;
+    }
+    
+    .carousel-cell img {
+        width: 100%;
+    }
+
+    .theme-content-wrapper {
+        text-align: left;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1094px) {
+    .main-carousel {
+        width: 85%;
+        margin: 5em auto;
+    }
+
+    .theme-content-wrapper {
+        font-size: 1.4em;
+    }
+}
+
+/* Prize pools */
+
+.welcome-wrapper img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.prize-distribution {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 0;
+}
+
+.prize {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 500;
+    margin-bottom: .8em;
+}
+
+.prize-bar {
+    color: black;
+    padding: .2em .4em;
+    flex-grow: 1;
+    position: relative;
+}
+
+.prize-bar__filler {
+    position: absolute;
+    height: 100%;
+    width: 75%;
+    background-color: #1DE9B6;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.prize-amount {
+    color: #1DE9B6;
+    width: 100%;
+    padding: .2em .4em;
+}
+
+.prize-image {
+    display: none;
+}
+
+@media (min-width: 760px) {
+    .welcome-wrapper > img {
+        display: none;
+    }
+
+    .prize-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5em 0;
+    }
+
+    .prize-image {
+        display: block;
+        width: 50%;
+        max-width: 450px;
+        padding: 0 1em;
+    }
+
+    .prize-distribution {
+        padding: .5em 1em;
+        flex-grow: 1;
+    }
+}
+
+@media (min-width: 1094px) {    
+    .prize-amount {
+        width: auto;
+    }
+    .prize-distribution {
+        padding: .5em 2em;
+    }
+}
+
+/* FAQs */
+
+.faq-wrapper {
+    padding: 1em 1.4em;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+}
+
+.faq-wrapper summary {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: .4em;
+}
+
+summary:focus {
+    outline: 0;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.marker {
+    color: white;
+    background-color: #FF1744;
+    border-radius: 100%;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    text-align: center;
+    display: inline-block;
+    margin-right: .5em;
+}
+
+.question {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+details[open] {
+    margin-bottom: 1.4em;
+}
+
+details[open] summary {
+    margin-bottom: .8em;
+}
+
+.answer {
+    padding-left: 1.5em
+}
+
+@media (min-width: 760px) {
+    .faq-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .faq-wrapper summary {
+        padding: .5em;
+        margin-bottom: 0;
+    }
+
+    details {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1094px) {
+    .faq-wrapper {
+        width: 85%;
+        margin: auto;
+        font-size: 1.4em;
+    }
+}
+
+/* Sponsors */
+
+.sponsors-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img.sponsor {
+    display: block;
+    width: 33%;
+    margin: 0;
+}
+
+@media (min-width: 760px) {
+    img.sponsor {
+        width: 15%;
+    }
+}
